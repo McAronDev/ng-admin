@@ -14,7 +14,7 @@ export default function maReferencedListColumn(NgAdminConfiguration, $stateParam
             pre: function(scope) {
                 scope.field = scope.field();
                 var targetEntity = scope.field.targetEntity();
-                scope.entries = scope.datastore().getEntries(targetEntity.uniqueId + '_list');
+                scope.entries = scope.datastore().getEntries(targetEntity.uniqueId + '_' + scope.field.name() + '_list');
                 scope.entity = NgAdminConfiguration().getEntity(targetEntity.name());
                 scope.sortField = isSortFieldForMe($stateParams.sortField, scope.field) ?
                     $stateParams.sortField :

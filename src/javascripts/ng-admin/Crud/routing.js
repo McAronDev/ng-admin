@@ -193,7 +193,7 @@ function routing($stateProvider) {
                             referencedLists[name].targetFields(),
                             referencedLists[name].targetEntity().name(),
                             referencedLists[name].targetEntity().identifier().name()
-                        ).map(entry => dataStore.addEntry(referencedLists[name].targetEntity().uniqueId + '_list', entry));
+                        ).map(entry => dataStore.addEntry(referencedLists[name].targetEntity().uniqueId + '_' + name + '_list', entry));
                     }
                 }],
                 entryWithReferences: ['dataStore', 'view', 'entry', 'referenceEntries', function(dataStore, view, entry, referenceEntries) {
